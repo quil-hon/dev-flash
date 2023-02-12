@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders normal Badge 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#E39828",
+        "borderRadius": 12,
+        "color": "#18181B",
+        "fontSize": 16,
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "lineHeight": 20,
+        "paddingHorizontal": 10,
+      },
+    ]
+  }
+>
+  normal
+</Text>
+`;
+
+exports[`renders small size Badge 1`] = `
+<Text
+  size="small"
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#E39828",
+        "borderRadius": 10,
+        "color": "#18181B",
+        "fontSize": 14,
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "lineHeight": 16,
+        "paddingHorizontal": 8,
+      },
+    ]
+  }
+>
+  small
+</Text>
+`;
+
+exports[`renders x-small size Badge 1`] = `
+<Text
+  size="x-small"
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#E39828",
+        "borderRadius": 12,
+        "color": "#18181B",
+        "fontSize": 11,
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "lineHeight": 14,
+        "paddingHorizontal": 10,
+      },
+    ]
+  }
+>
+  small
+</Text>
+`;

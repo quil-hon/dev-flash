@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders normal BodyText 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#18181B",
+        "fontSize": 16,
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "lineHeight": 20,
+      },
+    ]
+  }
+>
+  This is normal body text
+</Text>
+`;
+
+exports[`renders small size BodyText 1`] = `
+<Text
+  size="small"
+  style={
+    Array [
+      Object {
+        "color": "#18181B",
+        "fontSize": 14,
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "lineHeight": 16,
+      },
+    ]
+  }
+>
+  This is small body text
+</Text>
+`;
+
+exports[`renders x-small size BodyText 1`] = `
+<Text
+  size="x-small"
+  style={
+    Array [
+      Object {
+        "color": "#18181B",
+        "fontSize": 11,
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "lineHeight": 14,
+      },
+    ]
+  }
+>
+  This is x-small body text
+</Text>
+`;
