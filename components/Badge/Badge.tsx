@@ -8,9 +8,12 @@ interface BadgeProps {
 }
 
 const Badge = styled(TextBody)<BadgeProps>`
-  background-color: ${(props) => props.theme.colors.secondary[100]}
-  border-radius: ${({ size }) => (size === "small" ? 10 : 12)};
-  padding-horizontal: ${({ size }) => (size === "small" ? 8 : 10)};
+  color: ${({ theme }) => theme.colors.white[50]}
+  background-color: ${({ theme }) => theme.colors.secondary[100]}
+  border-radius: ${({ size }) => (size === "small" ? 12 : 14)};
+  overflow: hidden;
+  padding-horizontal: ${({ size }) => (size === "small" ? 8 : 12)};
+  padding-vertical: ${({ size }) => (size === "small" ? 4 : 12)};
 `;
 
 export default Badge;

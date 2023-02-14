@@ -1,12 +1,16 @@
 import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
+import { useTheme } from "styled-components/native";
 import { FilmListItem } from "../components/FilmList";
+import Layout from "../components/Layout";
 
 import { RootTabScreenProps } from "../types";
 
 export default function DevelopScreen({
   navigation,
 }: RootTabScreenProps<"Develop">) {
+  const { space } = useTheme();
+
   const data = [
     {
       model: "HP5+",
@@ -14,6 +18,7 @@ export default function DevelopScreen({
       iso: 400,
       isNegative: true,
       isBlackAndWhite: true,
+      numberOfProcess: 4,
     },
     {
       model: "T-Max",
@@ -21,14 +26,22 @@ export default function DevelopScreen({
       iso: 400,
       isNegative: true,
       isBlackAndWhite: true,
+      numberOfProcess: 2,
     },
   ];
   return (
-    <ScrollView>
-      {data.map((d) => (
-        <FilmListItem key={d.model} {...d} />
-      ))}
-    </ScrollView>
+    <Layout>
+      <ScrollView>
+        {data.map((d) => (
+          <FilmListItem
+            key={d.model}
+            style={{ marginBottom: space[6] }}
+            {...d}
+            badgeCount={d.numberOfProcess}
+          />
+        ))}
+      </ScrollView>
+    </Layout>
   );
 }
 
