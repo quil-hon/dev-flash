@@ -11,12 +11,13 @@ const InnerLayout = styled.View`
   width: ${({ theme }) => theme.space[84]};
 `;
 
-const Layout = ({ children }: ViewProps) => (
+const Layout = ({ children, style }: ViewProps) => (
   <View
     style={{
       width: LayoutStats.window.width,
       display: "flex",
       alignItems: "center",
+      ...(style as object),
     }}
   >
     <InnerLayout>{children}</InnerLayout>

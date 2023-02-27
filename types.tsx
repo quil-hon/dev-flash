@@ -18,6 +18,14 @@ declare global {
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
+  // Proccess pages
+  Processes: { filmId: string };
+  ProcessCreate: undefined;
+  ProcessUpdate: { filmId: string };
+
+  // Step pages
+  Steps: { processId: string };
+
   Modal: undefined;
   NotFound: undefined;
 };

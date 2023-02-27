@@ -25,17 +25,29 @@ import {
   RootTabScreenProps,
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
+import ProcessesScreen from "../screens/ProccessesScreen";
+import { useTheme } from "styled-components/native";
+import useHeaderConfig from "../hooks/useHeaderConfig";
 
 export default function Navigation({
   colorScheme,
 }: {
   colorScheme: ColorSchemeName;
 }) {
+  const { colors } = useTheme();
+  const themeData = {
+    dark: false,
+    colors: {
+      primary: colors.primary[100],
+      background: colors.background,
+      card: colors.background,
+      text: colors.dark[200],
+      border: colors.primary[100],
+      notification: colors.white[50],
+    },
+  };
   return (
-    <NavigationContainer
-      linking={LinkingConfiguration}
-      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-    >
+    <NavigationContainer linking={LinkingConfiguration} theme={themeData}>
       <RootNavigator />
     </NavigationContainer>
   );
@@ -54,6 +66,13 @@ function RootNavigator() {
         name="Root"
         component={BottomTabNavigator}
         options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Processes"
+        component={ProcessesScreen}
+        options={{
+          title: "",
+        }}
       />
       <Stack.Screen
         name="NotFound"
@@ -87,30 +106,15 @@ function BottomTabNavigator() {
         name="Develop"
         component={DevelopScreen}
         options={({ navigation }: RootTabScreenProps<"Develop">) => ({
-          title: "Develop",
+          headerShown: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate("Modal")}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}
-            >
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
         })}
       />
       <BottomTab.Screen
         name="Database"
         component={DatabaseScreen}
         options={{
-          title: "Database",
+          headerShown: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />

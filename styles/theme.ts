@@ -55,7 +55,7 @@ export const lightTheme = {
     },
   },
   colors: {
-    background: "#FDFEFD",
+    background: "#F5F5F5",
     primary: {
       50: "#6D8C83",
       100: "#0B3F30",
