@@ -12,7 +12,7 @@ import {
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
-import { ColorSchemeName, Pressable } from "react-native";
+import { ColorSchemeName, Text } from "react-native";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
@@ -28,6 +28,7 @@ import LinkingConfiguration from "./LinkingConfiguration";
 import ProcessesScreen from "../screens/ProccessesScreen";
 import { useTheme } from "styled-components/native";
 import useHeaderConfig from "../hooks/useHeaderConfig";
+import StepsScreen from "../screens/StepsScreeen";
 
 export default function Navigation({
   colorScheme,
@@ -70,6 +71,13 @@ function RootNavigator() {
       <Stack.Screen
         name="Processes"
         component={ProcessesScreen}
+        options={{
+          title: "",
+        }}
+      />
+      <Stack.Screen
+        name="Steps"
+        component={StepsScreen}
         options={{
           title: "",
         }}

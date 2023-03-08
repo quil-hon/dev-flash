@@ -12,7 +12,7 @@ const Badge = styled(TextBody)<BadgeProps>`
   background-color: ${({ theme }) => theme.colors.secondary[100]}
   border-radius: ${({ size }) => (size === "small" ? 12 : 14)};
   overflow: hidden;
-  padding-horizontal: ${({ size }) => (size === "small" ? 8 : 12)};
+  padding-horizontal: ${({ size }) => (size === "small" ? 12 : 16)};
   padding-vertical: ${({ size }) => (size === "small" ? 4 : 12)};
 `;
 

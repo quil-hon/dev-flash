@@ -22,7 +22,7 @@ const FilmLabel: React.FC<FilmLabelProps> = ({
   const theme = useTheme();
   return (
     <View style={style}>
-      {!!badgeCount && (
+      {typeof badgeCount === "number" && (
         <Badge
           style={{
             position: "absolute",

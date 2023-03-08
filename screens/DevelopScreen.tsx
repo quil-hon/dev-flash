@@ -5,6 +5,7 @@ import { useTheme } from "styled-components/native";
 import { FilmListItem } from "../components/FilmList";
 import { Heading1 } from "../components/Headings";
 import Layout from "../components/Layout";
+import Film from "../models/Film";
 
 import { RootTabScreenProps } from "../types";
 
@@ -14,24 +15,24 @@ export default function DevelopScreen({
   const insets = useSafeAreaInsets();
   const { space } = useTheme();
 
-  const data = [
+  const data: Film[] = [
     {
       id: "1",
       model: "HP5+",
       brand: "ILFORD",
-      iso: 400,
+      speed: 400,
       isNegative: true,
-      isBlackAndWhite: true,
-      numberOfProcess: 4,
+      isColor: true,
+      processes: [],
     },
     {
       id: "2",
       model: "T-Max",
       brand: "Kodak",
-      iso: 400,
+      speed: 400,
       isNegative: true,
-      isBlackAndWhite: true,
-      numberOfProcess: 2,
+      isColor: true,
+      processes: [],
     },
   ];
   return (
@@ -43,7 +44,7 @@ export default function DevelopScreen({
             key={d.id}
             style={{ marginBottom: space[6] }}
             {...d}
-            badgeCount={d.numberOfProcess}
+            badgeCount={d.processes.length}
             onPress={() => {
               navigation.push("Processes", {
                 filmId: d.id,

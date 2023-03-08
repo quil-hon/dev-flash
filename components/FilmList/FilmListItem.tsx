@@ -11,9 +11,9 @@ import FilmLabel from "./FilmLabel";
 export type FilmListItemProps = {
   model: string;
   brand: string;
-  iso: number;
+  speed: number;
   isNegative?: boolean | null;
-  isBlackAndWhite?: boolean | null;
+  isColor?: boolean | null;
   badgeCount?: number;
 } & ViewProps &
   Pick<PressableProps, "onPress">;
@@ -21,9 +21,9 @@ export type FilmListItemProps = {
 export default function FilmListItem({
   model,
   brand,
-  iso,
+  speed,
   isNegative,
-  isBlackAndWhite,
+  isColor,
   badgeCount,
   style,
   onPress,
@@ -42,8 +42,8 @@ export default function FilmListItem({
             <VStack>
               <Heading4 style={{ marginBottom: space[1] }}>{model}</Heading4>
               <TextBody size="small">
-                {brand}, ISO{iso}, {isNegative ? "[-]" : ""}
-                {isBlackAndWhite ? "B&W" : "Color"}
+                {brand}, ISO{speed}, {isNegative ? "[-]" : ""}
+                {isColor ? "B&W" : "Color"}
               </TextBody>
             </VStack>
           </HStack>

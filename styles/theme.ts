@@ -51,6 +51,11 @@ export const lightTheme = {
       },
     },
     body: {
+      fontSize: 16,
+      fontFamily: "",
+    },
+    smallBody: {
+      fontSize: 14,
       fontFamily: "",
     },
   },
